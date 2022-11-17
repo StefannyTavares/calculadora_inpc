@@ -1,15 +1,15 @@
 <template>
     <v-app>
-        <v-container fluid fill-height id="login-page">
+        <v-container fill-height fluid id="principal">
             <v-layout align-center justify-center>
-                <v-flex :style="{ 'max-width': '600px' }">
+                <v-flex :style="{ 'max-width': '600px', 'padding': '-20px' }">
                     <v-toolbar color="primary" dark>
                         <v-toolbar-title>Calculadora INPC</v-toolbar-title>
                     </v-toolbar>
                     <v-card elevation="12">
                         <v-card-text>
                             <v-row>
-                                <v-col cols="6">
+                                <v-col cols="5" offset="1">
                                     <date-picker
                                         v-model="dataInicio"
                                         label="dataInicio"
@@ -18,7 +18,7 @@
                                         placeholder=""
                                     />
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="5">
                                     <date-picker
                                         v-model="dataFinal"
                                         label="dataFinal"
@@ -29,7 +29,7 @@
                                 </v-col>
                             </v-row>
                             <v-row>
-                                <v-col cols="6">
+                                <v-col cols="5" offset="1">
                                     <input-money
                                         v-model="valor"
                                         label="Valor"
@@ -39,13 +39,14 @@
                                         options
                                     />
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="5">
                                     <input-money
                                         v-model="valorAtual"
                                         label="Valor atualizado"
                                         outlined
                                         dense
                                         placeholder=""
+                                        disabled
                                     />
                                 </v-col>
                             </v-row>
@@ -70,7 +71,7 @@
 
 <script>
 import datePicker from '../shared/datePicker.vue';
-import inputMoney from '../shared/inputMoney.vue'
+import inputMoney from '../shared/inputMoney.vue';
 
 export default {
     components: {
@@ -78,18 +79,21 @@ export default {
     },
     data() {
         return {
-            dataInicio: "",
-            dataFinal: "",
-            valor: "",
-            valorAtual: "",
+            dataInicio: '',
+            dataFinal: '',
+            valor: '',
+            valorAtual: '',
         };
     },
 };
 </script>
 
 <style scoped>
-#login-page {
-    background-color: #b6d2ed;
+#principal {
+    background-image: url(https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    padding: 100px;
+    width: 2000px;
 }
 
 .botao {
