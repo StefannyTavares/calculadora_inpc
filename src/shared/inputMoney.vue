@@ -7,7 +7,7 @@
             :outlined="outlined"
             :options="options"
             :dense="dense"
-            persistent-placeholder
+            :disabled="disabled"
         />
     </div>
 </template>
@@ -25,7 +25,7 @@ export default {
         outlined: Boolean,
         clearable: Boolean,
         dense: Boolean,
-        persistentPlaceholder: Boolean,
+        disabled: Boolean,
     },
     data() {
         return{
